@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="number" />
+    <button id="button">Guess</button>
+    <div id="text"></div>
+  </body>
+
+  <script>
+    let getalRaden = 5;
+    let button = document.querySelector("#button");
+    button.addEventListener("click", guess);
+
+    let textElement = document.querySelector("#text");
+
+    function guess() {
+      let numberGuessed = parseInt(document.querySelector("#number").value);
+      if (numberGuessed > getalRaden) {
+        textElement.textContent = "FOUT! Het getal is lager.";
+      }
+
+      if (numberGuessed < getalRaden) {
+        textElement.textContent = "FOUT! Het getal is hoger.";
+      }
+
+      if (numberGuessed == getalRaden) {
+        textElement.textContent = "GOED";
+      }
+    }
+  </script>
+</html>
