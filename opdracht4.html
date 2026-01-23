@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="button">gooien!</button>
+  </body>
+
+  <script>
+    let button = document.querySelector("#button");
+    button.addEventListener("click", gooien);
+    let numbers = [];
+
+    function gooien() {
+      for (let i = 0; i < 5; i++) {
+        numbers[i] = Math.floor(Math.random() * 5) + 1;
+      }
+      console.log(numbers);
+      console.log("Het getal 1 komt " + countNumber(1) + "x keer");
+      console.log("Het getal 2 komt " + countNumber(2) + "x keer");
+      console.log("Het getal 3 komt " + countNumber(3) + "x keer");
+      console.log("Het getal 4 komt " + countNumber(4) + "x keer");
+      console.log("Het getal 5 komt " + countNumber(5) + "x keer");
+    }
+
+    function countNumber(number) {
+      let count = 0;
+      for (let i = 0; i < 5; i++) {
+        if (numbers[i] == number) {
+          count++;
+        }
+      }
+      return count;
+    }
+  </script>
+</html>
