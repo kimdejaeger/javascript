@@ -1,0 +1,12 @@
+const studenten = [
+  { naam: "Jan", cijfer: 7 },
+  { naam: "Piet", cijfer: 8 },
+  { naam: "Klaas", cijfer: 6 },
+  { naam: "Marie", cijfer: 9 },
+];
+
+studenten.forEach((studenten) => {
+  if (studenten.cijfer >= 8) {
+    console.log(studenten.cijfer);
+  }
+});
