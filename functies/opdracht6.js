@@ -7,6 +7,6 @@ const studenten = [
 
 studenten.forEach((studenten) => {
   if (studenten.cijfer >= 8) {
-    console.log(studenten.cijfer);
+    console.log(studenten.naam);
   }
 });

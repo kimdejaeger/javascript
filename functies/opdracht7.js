@@ -4,4 +4,5 @@ let verdubbeld2 = getallen.map(function (x) {
   return x * 2;
 });
 
+console.log(verdubbeld2);
 // 2, 4, 6, 8, 10;
