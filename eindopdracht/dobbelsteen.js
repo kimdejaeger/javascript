@@ -1,7 +1,7 @@
 const dobbelstenen = [];
 
 let gooien = document.getElementById("gooi");
-gooien.addEventListener("click", gooiDobbelsteen);
+gooien.addEventListener("click", gooi);
 
 // let dobbelsteenPlaatjes = [
 //   "images/dice1.png",
@@ -12,7 +12,7 @@ gooien.addEventListener("click", gooiDobbelsteen);
 //   "images/dice6.png",
 // ];
 
-function gooiDobbelsteen() {
+function gooi() {
   for (let i = 0; i <= 3; i++) {
     let aantalOgen = Math.floor(Math.random() * 6) + 1;
 
