@@ -1,3 +1,5 @@
+const dobbelstenen = [];
+
 let gooien = document.getElementById("gooi");
 gooien.addEventListener("click", gooiDobbelsteen);
 
@@ -11,21 +13,30 @@ gooien.addEventListener("click", gooiDobbelsteen);
 // ];
 
 function gooiDobbelsteen() {
-
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 0; i <= 3; i++) {
     let aantalOgen = Math.floor(Math.random() * 6) + 1;
-    console.log(aantalOgen);
-    let diceDiv = "dice" + i;
 
-    console.log(diceDiv);
+    dobbelstenen[i] = aantalOgen;
+
+    // console.log(aantalOgen);
+    let diceDiv = "dice" + (i + 1);
+
+    // console.log(diceDiv);
     let diceImage = "images/dice" + aantalOgen + ".png";
-    console.log(diceImage);
+    // console.log(diceImage);
 
     let diceDivs = document.getElementById(diceDiv);
     const img = document.createElement("img");
     img.src = diceImage;
     diceDivs.replaceChildren(img);
   }
+
+  console.log(dobbelstenen);
+  speler1Totaal = dobbelstenen[0] + dobbelstenen[1];
+  speler2Totaal = dobbelstenen[2] + dobbelstenen[3];
+
+  console.log("Speler 1 totaal: " + speler1Totaal);
+  console.log("Speler 2 totaal: " + speler2Totaal);
 
   //   const diceDivs = document.querySelectorAll(".dice");
 
