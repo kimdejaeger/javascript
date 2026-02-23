@@ -1,6 +1,10 @@
 let gooien = document.getElementById("gooi");
 gooien.addEventListener("click", gooiDobbelsteen);
 
+let speler1Score = 0;
+let speler2Score = 0;
+let gelijkspelScore = 0;
+
 let dobbelsteenPlaatjes = [
   "images/dice1.png",
   "images/dice2.png",
@@ -12,13 +16,35 @@ let dobbelsteenPlaatjes = [
 
 function gooiDobbelsteen() {
   const diceDivs = document.querySelectorAll(".dice");
+  const dobbelstenen = [];
 
   diceDivs.forEach((div) => {
-    const randomIndex = Math.floor(Math.random() * dobbelsteenPlaatjes.length);
+    const aantalOgen = Math.floor(Math.random() * dobbelsteenPlaatjes.length);
+    dobbelstenen.push(aantalOgen + 1);
 
     const img = document.createElement("img");
-    img.src = dobbelsteenPlaatjes[randomIndex];
+    img.src = dobbelsteenPlaatjes[aantalOgen];
 
     div.replaceChildren(img);
   });
+  let speler1Totaal = dobbelstenen[0] + dobbelstenen[1];
+  let speler2Totaal = dobbelstenen[2] + dobbelstenen[3];
+
+  console.log("Speler 1 totaal: " + speler1Totaal);
+  console.log("Speler 2 totaal: " + speler2Totaal);
+
+  let winst = document.getElementById("winst");
+  let verlies = document.getElementById("verlies");
+  let gelijkspel = document.getElementById("gelijkspel");
+
+  if (speler1Totaal > speler2Totaal) {
+    speler1Score = speler1Score + 1;
+    winst.textContent = "winst: " + speler1Score;
+  } else if (speler2Totaal > speler1Totaal) {
+    speler2Score = speler2Score + 1;
+    verlies.textContent = "verlies: " + speler2Score;
+  } else {
+    gelijkspelScore = gelijkspelScore + 1;
+    gelijkspel.textContent = "Gelijkspel: " + gelijkspelScore;
+  }
 }
