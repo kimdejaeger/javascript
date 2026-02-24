@@ -47,4 +47,32 @@ function gooiDobbelsteen() {
     gelijkspelScore = gelijkspelScore + 1;
     gelijkspel.textContent = "Gelijkspel: " + gelijkspelScore;
   }
+
+  let eindScore = document.getElementById("eindScore");
+
+  if (speler1Score == 3) {
+    eindScore.textContent = "Jij hebt gewonnen!";
+  } else if (speler2Score == 3) {
+    eindScore.textContent = "De computer heeft gewonnen!";
+  }
+}
+
+let reset = document.getElementById("reset");
+reset.addEventListener("click", resetSpel);
+
+function resetSpel() {
+  speler1Score = 0;
+  speler2Score = 0;
+  gelijkspelScore = 0;
+
+  let winst = document.getElementById("winst");
+  let verlies = document.getElementById("verlies");
+  let gelijkspel = document.getElementById("gelijkspel");
+
+  winst.textContent = "Winst: ";
+  verlies.textContent = "Verlies: ";
+  gelijkspel.textContent = "Gelijkspel: ";
+
+  let eindScore = document.getElementById("eindScore");
+  eindScore.textContent = "";
 }
