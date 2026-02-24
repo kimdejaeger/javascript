@@ -55,6 +55,10 @@ function gooiDobbelsteen() {
   } else if (speler2Score == 3) {
     eindScore.textContent = "De computer heeft gewonnen!";
   }
+
+  if (speler1Score == 3 || speler2Score == 3) {
+    gooien.disabled = true;
+  }
 }
 
 let reset = document.getElementById("reset");
@@ -64,6 +68,18 @@ function resetSpel() {
   speler1Score = 0;
   speler2Score = 0;
   gelijkspelScore = 0;
+
+  const diceDivs = document.querySelectorAll(".dice");
+  const dobbelstenen = [];
+
+  diceDivs.forEach((div) => {
+    const aantalOgen = Math.floor(Math.random() * dobbelsteenPlaatjes.length);
+    dobbelstenen.push(aantalOgen + 1);
+
+    const img = "";
+
+    div.replaceChildren(img);
+  });
 
   let winst = document.getElementById("winst");
   let verlies = document.getElementById("verlies");
@@ -75,4 +91,6 @@ function resetSpel() {
 
   let eindScore = document.getElementById("eindScore");
   eindScore.textContent = "";
+
+  gooien.disabled = false;
 }
